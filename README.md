@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -117,7 +117,7 @@ button{
   to{transform:translateY(-900px);opacity:0;}
 }
 
-/* HEARTBEAT EFFECT */
+/* HEARTBEAT */
 .heartbeat{
   animation:pulse 1s infinite;
 }
@@ -128,17 +128,21 @@ button{
   100%{transform:scale(1);}
 }
 
-/* PHOTO */
+/* PHOTO (JPG SUPPORT) */
 #photo{
   width:180px;
   height:180px;
   border-radius:50%;
   border:4px solid pink;
-  margin-bottom:15px;
-  background:url("https://i.imgur.com/3GvwNBf.jpeg");
+  margin-top:20px;
+
+  background:url("kanii.jpg"); /* 👈 YOUR JPG FILE */
   background-size:cover;
   background-position:center;
+
   box-shadow:0 0 30px pink;
+  opacity:0;
+  transition:2s ease;
 }
 
 /* MUSIC */
@@ -179,9 +183,13 @@ audio{display:none;}
 
 <!-- SCREEN 3 -->
 <div id="s3" class="screen down heartbeat">
-  <div id="photo"></div>
+
   <h1 id="loveText">I LOVE YOU MY KANII NUMM NUMM 💖</h1>
   <p>Forever. Always. Only you.</p>
+
+  <!-- PHOTO UNDER TEXT -->
+  <div id="photo"></div>
+
 </div>
 
 <script>
@@ -214,7 +222,7 @@ setTimeout(()=>{
   music.play().catch(()=>{});
 },3000);
 
-/* CHECK NICKNAME */
+/* CHECK NAME */
 function check(){
   let val=document.getElementById("name").value;
 
@@ -257,15 +265,18 @@ function flower(){
   setTimeout(()=>f.remove(),5000);
 }
 
-/* MAGIC EFFECT */
+/* MAGIC */
 function startMagic(){
   setInterval(heart,120);
   setInterval(flower,200);
 
-  /* 💖 FINAL TEXT DELAY (FIX YOU WANTED) */
   setTimeout(()=>{
     document.getElementById("loveText").style.opacity="1";
-  },1500);
+  },800);
+
+  setTimeout(()=>{
+    document.getElementById("photo").style.opacity="1";
+  },2000);
 }
 
 /* CLICK HEART BURST */
