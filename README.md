@@ -185,7 +185,7 @@ audio{display:none;}
 <div id="s3" class="screen down heartbeat">
 
   <h1 id="loveText">I LOVE YOU MY KANII NUMM NUMM 💖</h1>
-  <p>Forever. Always. Only you.</p>
+
 
   <!-- PHOTO UNDER TEXT -->
   <div id="photo"></div>
